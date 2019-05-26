@@ -3,6 +3,9 @@ include "config.php";
 
 class DataBase
 {
+    /**
+     * @return false|mysqli
+     */
     public function getDBConnection() {
         global $config;
         $link = mysqli_connect($config["host"], $config["user"], $config["password"], $config["database"]);
@@ -19,6 +22,11 @@ class DataBase
         return $link;
     }
 
+    /**
+     * @param $title
+     * @param $text
+     * @param $isPublished
+     */
     public function insertNewArticle($title, $text, $isPublished) {
         $this->getDBConnection();
 
