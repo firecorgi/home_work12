@@ -15,6 +15,10 @@ class Article
         return $this->isPublished = true;
     }
 
+    /**
+     * @param $title
+     * @param $text
+     */
     public function save($title, $text) {
         $database = new DataBase();
         $database->insertNewArticle($title, $text, $this->publish());
