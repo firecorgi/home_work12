@@ -7,6 +7,9 @@ class Article
     public $title;
     public $text;
 
+    /**
+     * @return bool
+     */
     public function publish()
     {
         return $this->isPublished = true;
